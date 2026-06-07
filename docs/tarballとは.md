@@ -1,0 +1,1 @@
+tarballは、npmに公開されるpackageの実体ファイル

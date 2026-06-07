@@ -1,0 +1,67 @@
+{
+  "name": "@hokori/ui",
+  "version": "0.1.0",
+  "description": "A React UI component library.",
+  "type": "module",
+  "packageManager": "pnpm@11.5.2",
+  "license": "MIT",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "files": [
+    "dist",
+    "styles.css"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "style": "./styles.css",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./button": {
+      "types": "./dist/components/button/index.d.ts",
+      "import": "./dist/components/button/index.js",
+      "require": "./dist/components/button/index.cjs"
+    },
+    "./text-field": {
+      "types": "./dist/components/text-field/index.d.ts",
+      "import": "./dist/components/text-field/index.js",
+      "require": "./dist/components/text-field/index.cjs"
+    },
+    "./styles.css": "./styles.css",
+    "./package.json": "./package.json"
+  },
+  "keywords": [
+    "react",
+    "ui",
+    "components",
+    "design-system"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts src/components/*/index.ts --format esm,cjs --dts --clean --out-dir dist",
+    "check": "tsc --noEmit",
+    "pack:preview": "pnpm build && pnpm pack --json --out .pack/%s-%v.tgz"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "tsup": "^8.5.1",
+    "typescript": "^6.0.3"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "engines": {
+    "node": ">=22.13.0"
+  }
+}

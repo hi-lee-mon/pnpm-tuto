@@ -1,0 +1,160 @@
+:root {
+  --hui-color-background: #ffffff;
+  --hui-color-foreground: #111827;
+  --hui-color-primary: #111827;
+  --hui-color-primary-foreground: #ffffff;
+  --hui-color-secondary: #ffffff;
+  --hui-color-secondary-foreground: #111827;
+  --hui-color-border: #d1d5db;
+  --hui-color-muted-foreground: #6b7280;
+  --hui-color-danger: #dc2626;
+  --hui-color-ring: #2563eb;
+  --hui-radius-sm: 0.375rem;
+  --hui-radius-md: 0.5rem;
+  --hui-font-family: inherit;
+}
+
+.hui-Button {
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: var(--hui-radius-md);
+  cursor: pointer;
+  display: inline-flex;
+  font-family: var(--hui-font-family);
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1;
+  transition:
+    background-color 120ms ease,
+    border-color 120ms ease,
+    color 120ms ease,
+    box-shadow 120ms ease;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.hui-Button:focus-visible {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--hui-color-ring) 32%, transparent);
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.hui-Button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.hui-Button[data-variant="primary"] {
+  background: var(--hui-color-primary);
+  color: var(--hui-color-primary-foreground);
+}
+
+.hui-Button[data-variant="primary"]:where(:hover:not(:disabled)) {
+  background: color-mix(in srgb, var(--hui-color-primary) 88%, white);
+}
+
+.hui-Button[data-variant="secondary"] {
+  background: var(--hui-color-secondary);
+  border-color: var(--hui-color-border);
+  color: var(--hui-color-secondary-foreground);
+}
+
+.hui-Button[data-variant="secondary"]:where(:hover:not(:disabled)) {
+  background: color-mix(in srgb, var(--hui-color-secondary) 94%, black);
+}
+
+.hui-Button[data-size="sm"] {
+  font-size: 0.875rem;
+  min-height: 2rem;
+  padding: 0 0.75rem;
+}
+
+.hui-Button[data-size="md"] {
+  font-size: 1rem;
+  min-height: 2.5rem;
+  padding: 0 1rem;
+}
+
+.hui-Button[data-size="lg"] {
+  font-size: 1rem;
+  min-height: 3rem;
+  padding: 0 1.25rem;
+}
+
+.hui-TextField {
+  display: grid;
+  font-family: var(--hui-font-family);
+  gap: 0.375rem;
+}
+
+.hui-TextField-label {
+  color: var(--hui-color-foreground);
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+}
+
+.hui-TextField-input {
+  background: var(--hui-color-background);
+  border: 1px solid var(--hui-color-border);
+  border-radius: var(--hui-radius-sm);
+  color: var(--hui-color-foreground);
+  font-family: inherit;
+  min-width: 0;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  transition:
+    border-color 120ms ease,
+    box-shadow 120ms ease;
+  width: 100%;
+}
+
+.hui-TextField-input::placeholder {
+  color: var(--hui-color-muted-foreground);
+}
+
+.hui-TextField-input:focus-visible {
+  border-color: var(--hui-color-ring);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--hui-color-ring) 24%, transparent);
+}
+
+.hui-TextField-input:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.hui-TextField[data-invalid] .hui-TextField-input {
+  border-color: var(--hui-color-danger);
+}
+
+.hui-TextField-description,
+.hui-TextField-error {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.hui-TextField-description {
+  color: var(--hui-color-muted-foreground);
+}
+
+.hui-TextField-error {
+  color: var(--hui-color-danger);
+}
+
+.hui-TextField[data-size="sm"] .hui-TextField-input {
+  font-size: 0.875rem;
+  min-height: 2rem;
+  padding: 0 0.625rem;
+}
+
+.hui-TextField[data-size="md"] .hui-TextField-input {
+  font-size: 1rem;
+  min-height: 2.5rem;
+  padding: 0 0.75rem;
+}
+
+.hui-TextField[data-size="lg"] .hui-TextField-input {
+  font-size: 1rem;
+  min-height: 3rem;
+  padding: 0 1rem;
+}
