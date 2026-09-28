@@ -1,2 +1,7 @@
+minimumReleaseAge: 4320
+saveExact: true
+preferFrozenLockfile: true
+overrides:
+  esbuild: 0.28.2
 allowBuilds:
   esbuild: true
